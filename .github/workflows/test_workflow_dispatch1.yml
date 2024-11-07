@@ -1,7 +1,18 @@
-name: 'Workflow dispatch Test1_college'
+name: 'Workflow dispatch Test1_college_temp'
 on: 
   push:
   workflow_dispatch:
+    inputs:
+      college_name:
+        description: 'Your college name'
+        required: true
+        default: 'NIT'
+        type: string
+      years:
+        description: 'Your college Years'
+        required: true
+        type: number
+        default: 50
         
 
 jobs:
@@ -11,7 +22,14 @@ jobs:
     steps:
       
       - name: Print name
-        run: echo "Hello World"
-        
-
+        if: ${{ inputs.college_name }}
+        run: echo ${{ inputs.college_name }}
       
+      - name: Print age
+        if: ${{ inputs.years }}
+        run: echo ${{ inputs.years }}
+  call-reusable_workflow:
+    uses: ./.github/workflows/callthis.yml
+    with:
+      username: ${{ inputs.college_name }}
+  
