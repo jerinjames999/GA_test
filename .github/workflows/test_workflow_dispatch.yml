@@ -26,7 +26,7 @@ jobs:
       
       - name: Print age
         if: ${{ inputs.name }}
-        run: echo ${{ str(inputs.age) }}
+        run: echo ${{ inputs.age }}
         
 
       
