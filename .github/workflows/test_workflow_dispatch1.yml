@@ -1,5 +1,6 @@
 name: 'Workflow dispatch Test1_college'
 on: 
+  push:
   workflow_dispatch:
     inputs:
       college_name:
