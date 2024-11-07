@@ -1,0 +1,16 @@
+name: 'Workflow dispatch Test1_college'
+on: 
+  push:
+        
+
+jobs:
+  print-details:
+    runs-on: ubuntu-latest
+    
+    steps:
+      
+      - name: Print name
+        run: echo "Hello World"
+        
+
+      
