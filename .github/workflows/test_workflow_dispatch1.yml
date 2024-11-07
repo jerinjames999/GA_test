@@ -29,7 +29,7 @@ jobs:
         if: ${{ inputs.years }}
         run: echo ${{ inputs.years }}
   call-reusable_workflow:
-    uses: .github/workflows/test_workflow_call1.yml@master
+    uses: ./.github/workflows/test_workflow_call1.yml
     with:
       username: ${{ inputs.college_name }}
   
