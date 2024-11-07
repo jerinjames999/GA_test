@@ -1,0 +1,32 @@
+name: 'Workflow dispatch Test1'
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Your name'
+        required: true
+        default: 'Ravi'
+        type: string
+      age:
+        description: 'Your age'
+        required: true
+        type: number
+        default: '24'
+        
+
+jobs:
+  print-details:
+    runs-on: ubuntu-latest
+    
+    steps:
+      
+      - name: Print name
+        if: ${{ inputs.name }}
+        run: echo ${{ inputs.name }}
+      
+      - name: Print age
+        if: ${{ inputs.name }}
+        run: echo ${{ inputs.age }}
+        
+
+      
