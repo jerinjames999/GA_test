@@ -1,17 +1,17 @@
-name: 'Workflow dispatch Test1'
+name: 'Workflow dispatch Test1_college'
 on: 
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Your name'
+      college_name:
+        description: 'Your college name'
         required: true
-        default: 'Ravi'
+        default: 'NIT'
         type: string
-      age:
-        description: 'Your age'
+      years:
+        description: 'Your college Years'
         required: true
         type: number
-        default: '24'
+        default: 50
         
 
 jobs:
@@ -21,12 +21,12 @@ jobs:
     steps:
       
       - name: Print name
-        if: ${{ inputs.name }}
-        run: echo ${{ inputs.name }}
+        if: ${{ inputs.college_name }}
+        run: echo ${{ inputs.college_name }}
       
       - name: Print age
-        if: ${{ inputs.name }}
-        run: echo ${{ inputs.age }}
+        if: ${{ inputs.years }}
+        run: echo ${{ inputs.years }}
         
 
       
