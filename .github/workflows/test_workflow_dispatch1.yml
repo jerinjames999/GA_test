@@ -1,4 +1,4 @@
-name: 'Workflow dispatch Test1_college'
+name: 'Workflow dispatch Test1_college_temp'
 on: 
   workflow_dispatch:
     inputs:
